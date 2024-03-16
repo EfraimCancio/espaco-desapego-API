@@ -53,4 +53,10 @@ public class CategoryController {
         var page = categoryRepository.findAllByStatusTrue(pagination);
         return ResponseEntity.ok(page);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity datailCategory(@PathVariable Long id) {
+        var category = categoryRepository.getReferenceById(id);
+        return ResponseEntity.ok(new DataCategoryBreakdownDTO(category));
+    }
 }

@@ -54,4 +54,11 @@ public class ProductsController {
         var page =  productsRepository.findAllByStatusTrue(pagination);
         return ResponseEntity.ok(page);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity datailProduct(@PathVariable Long id) {
+        var product = productsRepository.getReferenceById(id);
+
+        return ResponseEntity.ok(new DataProductBreakdownDTO(product));
+    }
 }

@@ -55,4 +55,9 @@ public class SizeController {
         return ResponseEntity.ok(page);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity datailSize(@PathVariable Long id) {
+        var size = sizesRepository.getReferenceById(id);
+        return ResponseEntity.ok(new DataSizeBreakdownDTO(size));
+    }
 }

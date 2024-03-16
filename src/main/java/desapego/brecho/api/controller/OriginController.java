@@ -1,6 +1,5 @@
 package desapego.brecho.api.controller;
 
-
 import desapego.brecho.api.origin.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +53,12 @@ public class OriginController {
     public ResponseEntity<Page<Origin>> listActiveOrigins(@PageableDefault(size = 15, sort={"id"}) Pageable pagination) {
       var page = originRepository.findAllByStatusTrue(pagination);
         return ResponseEntity.ok(page);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity datailOrigin(@PathVariable Long id) {
+        var origin = originRepository.getReferenceById(id);
+        return ResponseEntity.ok(new DataOriginBreakdownDTO(origin));
     }
 }
 

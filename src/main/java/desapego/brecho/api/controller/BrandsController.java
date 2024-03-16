@@ -1,6 +1,7 @@
 package desapego.brecho.api.controller;
 
 import desapego.brecho.api.brand.*;
+import desapego.brecho.api.category.DataCategoryBreakdownDTO;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -54,4 +55,9 @@ public class BrandsController {
         return ResponseEntity.ok(page);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity datailBrand(@PathVariable Long id) {
+        var brand = brandRepository.getReferenceById(id);
+        return ResponseEntity.ok(new DataBrandBreakdownDTO(brand));
+    }
 }
