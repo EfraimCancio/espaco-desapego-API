@@ -1,4 +1,4 @@
-package desapego.brecho.api.infra;
+package desapego.brecho.api.infra.exceptions;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
