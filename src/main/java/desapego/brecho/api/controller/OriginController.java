@@ -1,6 +1,7 @@
 package desapego.brecho.api.controller;
 
-import desapego.brecho.api.origin.*;
+import desapego.brecho.api.domain.origin.*;
+import desapego.brecho.api.domain.origin.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

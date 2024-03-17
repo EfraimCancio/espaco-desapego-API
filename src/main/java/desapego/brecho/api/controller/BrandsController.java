@@ -1,7 +1,8 @@
 package desapego.brecho.api.controller;
 
-import desapego.brecho.api.brand.*;
-import desapego.brecho.api.category.DataCategoryBreakdownDTO;
+import desapego.brecho.api.domain.brand.*;
+import desapego.brecho.api.domain.brand.Brand;
+import desapego.brecho.api.domain.brand.BrandRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
