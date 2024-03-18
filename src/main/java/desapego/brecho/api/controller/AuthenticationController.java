@@ -1,6 +1,9 @@
 package desapego.brecho.api.controller;
 
 import desapego.brecho.api.domain.user.DataAuthenticationDTO;
+import desapego.brecho.api.domain.user.User;
+import desapego.brecho.api.infra.security.DataTokenJWTDTO;
+import desapego.brecho.api.infra.security.TokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,12 +21,15 @@ public class AuthenticationController {
     @Autowired
     private AuthenticationManager manager;
 
+    @Autowired
+    private TokenService tokenService;
+
     @PostMapping
     public ResponseEntity login(@RequestBody @Valid DataAuthenticationDTO dataAuthentication) {
-        var token = new UsernamePasswordAuthenticationToken(dataAuthentication.login(), dataAuthentication.password());
-        var authentication = manager.authenticate(token);
-
-        return ResponseEntity.ok().build();
+        var authenticationToken = new UsernamePasswordAuthenticationToken(dataAuthentication.login(), dataAuthentication.password());
+        var authentication = manager.authenticate(authenticationToken);
+        var tokenJWT = tokenService.generateToken((User) authentication.getPrincipal());
+        return ResponseEntity.ok(new DataTokenJWTDTO(tokenJWT));
     }
 }
 
