@@ -52,7 +52,6 @@ public class Product {
     private Boolean status;
 
 
-
     public Product(DataProductsDTO data) {
         this.descProduto = data.descProduto();
         this.idCategoria = data.idCategoria();

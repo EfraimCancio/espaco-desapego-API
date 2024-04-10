@@ -28,7 +28,7 @@ public class SizeController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<Size>> listSize(@PageableDefault(size = 15, sort={"id"}) Pageable pagination) {
+    public ResponseEntity<Page<Size>> listSizes(@PageableDefault(size = 15, sort={"id"}) Pageable pagination) {
         var page = sizesRepository.findAll(pagination);
         return ResponseEntity.ok(page);
     }
