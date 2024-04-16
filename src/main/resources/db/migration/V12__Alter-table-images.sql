@@ -1,0 +1,1 @@
+alter table tb_image change column id id varchar(100) not null;
