@@ -1,3 +1,0 @@
-ALTER TABLE tb_categoria ADD STATUS TINYINT NOT NULL;
-
-UPDATE tb_categoria SET STATUS = 1;

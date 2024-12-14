@@ -9,6 +9,8 @@ public record DataUpdateOriginDTO(
 
         String descOrigem,
 
-        Type tipoOrigem
+        Type tipoOrigem,
+
+        Boolean status
 ) {
 }

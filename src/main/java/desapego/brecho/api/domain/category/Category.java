@@ -32,6 +32,9 @@ public class Category {
         if (dataCategory.descCategoria() != null) {
             this.descCategoria = dataCategory.descCategoria();
         }
+        if (dataCategory.status() != null) {
+            this.status = dataCategory.status();
+        }
     }
 
     public void inactivateCategory() {

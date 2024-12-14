@@ -27,6 +27,7 @@ public class Brand {
 
     public Brand (DataBrandDTO data) {
         this.descMarca = data.descMarca();
+        this.status = data.status();
     }
 
 
@@ -34,6 +35,9 @@ public class Brand {
     public void updateBrand(DataUpdateBrandDTO dataBrand) {
         if (dataBrand.descMarca() != null) {
             this.descMarca = dataBrand.descMarca();
+        }
+        if(dataBrand.status() != null) {
+            this.status = dataBrand.status();
         }
     }
 

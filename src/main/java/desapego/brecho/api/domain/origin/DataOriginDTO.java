@@ -7,7 +7,6 @@ public record DataOriginDTO(
         @NotBlank
         String descOrigem,
 
-        @NotBlank
         Type tipoOrigem,
 
         Boolean status

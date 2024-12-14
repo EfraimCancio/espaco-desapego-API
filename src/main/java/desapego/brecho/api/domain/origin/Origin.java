@@ -40,6 +40,9 @@ public class Origin {
         if (dataOrigin.tipoOrigem() != null) {
             this.tipoOrigem = dataOrigin.tipoOrigem();
         }
+        if (dataOrigin.status() != null) {
+            this.status = dataOrigin.status();
+        }
     }
 
     public void inactivateOrigin() {

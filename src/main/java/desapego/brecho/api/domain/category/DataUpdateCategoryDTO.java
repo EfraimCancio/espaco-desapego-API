@@ -9,6 +9,8 @@ public record DataUpdateCategoryDTO(
         Long id,
 
         @NotBlank
-        String descCategoria
+        String descCategoria,
+
+        Boolean status
 ) {
 }

@@ -1,5 +1,16 @@
 package desapego.brecho.api.infra.security;
 
+/*
+        Definição da CLASSE: Filtro responsável por interceptar as requisições HTTP da Api.
+
+        Principais Atribuições:
+        1. Recupera o token que vem no cabeçalho AuthAuthorisation da requisição:
+        2. Verifica se o token é válido, no tempo de validade e não nulo!
+        3. Compara os valores de loguin recebidos no subject do token recuperado;
+        4. Testa as permições do usuario logado, liberando acesso de acordo com as pemissões
+                do metodo user.getAuthorities();
+        5. Conclui o processo de autenticação e finaliza dando continuidade ao fluxo da requisição HTTP.
+*/
 
 import desapego.brecho.api.domain.user.UserRepository;
 import jakarta.servlet.FilterChain;
@@ -32,7 +43,6 @@ public class SecurityFilter extends OncePerRequestFilter {
             var authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }
-
         filterChain.doFilter(request, response);
     }
 

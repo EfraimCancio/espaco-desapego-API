@@ -1,6 +1,5 @@
 package desapego.brecho.api.domain.brand;
 
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -10,5 +9,8 @@ public record DataUpdateBrandDTO(
         Long id,
 
         @NotBlank
-        String descMarca) {
+        String descMarca,
+
+        Boolean status
+) {
 }

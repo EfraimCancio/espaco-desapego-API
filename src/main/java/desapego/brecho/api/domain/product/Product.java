@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id")
+@EqualsAndHashCode(of = "ID")
 public class Product {
 
     @Id
@@ -47,8 +47,7 @@ public class Product {
     @Column(name = "DT_SAIDA")
     private LocalDate dtSaida;
 
-
-    @Column(name = "status")
+    @Column(name = "STATUS")
     private Boolean status;
 
 
